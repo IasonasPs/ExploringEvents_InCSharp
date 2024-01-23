@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace Introduction.Publishers
 {
-    //The class which raises events 
-
+    //We declare a delegate
     public delegate void Notify();
-
-
-    public delegate void MyEventHandler(object sender, EventArgs e);
-    public class Order
+    
+    public class Order //The class which raises events 
     {
+        //We declare an event of delegate type Notify !
         public event Notify ProcessCompleted;
+        //The Notify delegate specifies the signature for the ProcessCompleted event handler.
+        //It specifies that the event handler method in subscriber class must have a void return
+        //type and no parameters
+        
         public void StartProcess()
         {
             Console.WriteLine("Process started");
